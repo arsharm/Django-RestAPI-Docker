@@ -40,7 +40,7 @@ class ModelTests(TestCase):
 
         email = "testemail@Airbase.io"
         password = "Test@123"
-        user = get_user_model().objects.create_super_user(
+        user = get_user_model().objects.create_superuser(
             email=email,
             password=password
         )
