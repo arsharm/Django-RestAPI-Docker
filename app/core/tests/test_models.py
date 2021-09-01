@@ -26,7 +26,6 @@ class ModelTests(TestCase):
             email=email,
             password=password
         )
-
         self.assertEqual(email.lower(), user.email)
 
     def test_create_user_invalid_email(self):
@@ -46,3 +45,5 @@ class ModelTests(TestCase):
         )
         self.assertTrue(user.is_staff)
         self.assertTrue(user.is_superuser)
+
+
