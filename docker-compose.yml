@@ -14,21 +14,21 @@ services:
              python manage.py runserver 0.0.0.0:8000"
     environment: 
       - DB_HOST=db
-      - DB_NAME=postgres
+      - DB_NAME=app
       - DB_USER=postgres
       - DB_PASS=supersecretpassword
       - DB_PORT=5432
     depends_on: 
-    - db
+      - db
 
   db:
     image: postgres
-    volumes: 
-      - ./data/db:/var/lib/postgresql/data
+    # volumes: 
+    #   - ./data/db:/var/lib/postgresql/data
     environment: 
-      - POSTGRES_DB=postgres
+      - POSTGRES_DB=app
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=supersecretpassword
     ports:      
-     - 80:80
-     - 5432:5432
+      - 80:80
+      - 5432:5432
